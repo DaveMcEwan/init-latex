@@ -71,6 +71,15 @@
 
 \begin{document}
 
-DOCUMENT
+DOCUMENT \cite{Shannon1948}
+
+\clearpage
+\addcontentsline{toc}{section}{Glossary}
+\printnoidxglossary[sort=letter]
+
+\clearpage
+\addcontentsline{toc}{section}{References}
+\bibliography{main}{} % main.bib
+\bibliographystyle{plain}
 
 \end{document}

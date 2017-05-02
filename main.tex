@@ -52,16 +52,23 @@
 
 \usepackage{glossaries} % {{{
 \makenoidxglossaries
-%\newglossaryentry{ex}{name={sample},description={an example}}
-%\newacronym{svm}{svm}{support vector machine}
-%
-%In text, please use the \gls command to put abbreviations/anything else in the
-%glossary into your text.
+
+\newglossaryentry{naiive}{
+  name=na\"{\i}ve,
+    description={is a French loanword (adjective, form of naïf)
+                 indicating having or showing a lack of experience,
+                 understanding or sophistication}
+}
+
+\newacronym{bsc}{BSC}{Binary Symmetric Channel}
 % }}} glossaries
 
 \newcommand{\HRule}[1]{\rule{\linewidth}{#1}}
 
 \newcommand{\TODO}[1]{[\textbf{TODO} \textsl{#1}]}
+
+\newcommand*{\ShowAbstract}{} % Comment to hide the Abstract.
+\newcommand*{\ShowAppendix}{} % Comment to hide the Appendices.
 
 \author{AUTHOR}
 
@@ -71,7 +78,46 @@
 
 \begin{document}
 
-DOCUMENT \cite{Shannon1948}
+% {{{ prolog
+
+\maketitle
+
+\ifdefined\ShowAbstract \begin{abstract}
+ABSTRACT
+\end{abstract} \fi
+
+\setcounter{tocdepth}{2}
+\tableofcontents
+
+% }}} prolog
+
+\clearpage \section{SECTION} % {{{
+\label{sec:SECTION}
+
+SECTION
+
+\subsection{SUBSECTION}
+SUBSECTION
+
+\subsubsection{SUBSUBSECTION}
+SUBSUBSECTION
+
+foo \gls{bsc}
+bar \gls{bsc}
+
+foo \gls{naiive}
+bar \gls{naiive}
+
+REF \ref{sec:SECTION}
+CITE \cite{Shannon1948}
+
+\TODO{SOMETHING}
+
+%TODO: Table(+tot), Figure(+tot), Equation, math commands, SI
+
+% }}} sec:SECTION
+
+% {{{ epilog
 
 \clearpage
 \addcontentsline{toc}{section}{Glossary}
@@ -81,5 +127,19 @@ DOCUMENT \cite{Shannon1948}
 \addcontentsline{toc}{section}{References}
 \bibliography{main}{} % main.bib
 \bibliographystyle{plain}
+
+\ifdefined\ShowAppendix \begin{appendices} % {{{
+    \addappheadtotoc
+    \appendixpage
+
+    \section{APPENDSEC}
+    \label{appendix:APPENDSEC}
+
+    \subsection{APPENDSUBSEC}\label{appendix:APPENDSUBSEC}
+    \lstinputlisting[language=make]{Makefile}
+
+\end{appendices} \fi % }}}
+
+% }}} epilog
 
 \end{document}

@@ -10,7 +10,7 @@ rebuild:
 
 build: clean
 	pdflatex -quiet $(MAIN)
-	bibtex   $(MAIN)
+	bibtex          $(MAIN)
 	pdflatex -quiet $(MAIN)
 	pdflatex -quiet $(MAIN)
 

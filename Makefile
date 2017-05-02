@@ -1,7 +1,8 @@
 # Initial LaTeX
 # Dave McEwan
 #
-# Template LaTeX document with git and Makefile.
+# https://github.com/DaveMcEwan/init-latex
+# Template for LaTeX project with Makefile and git hooks.
 
 MAIN := main
 

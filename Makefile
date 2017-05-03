@@ -4,6 +4,8 @@
 # https://github.com/DaveMcEwan/init-latex
 # Template for LaTeX project with Makefile and git hooks.
 
+# Depends on make, grep, cut, tail, rm, ln, echo, git, pdflatex, bibtex.
+
 setup: rminit
 setup: mkmod
 setup: gitinit

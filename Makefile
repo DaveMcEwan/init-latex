@@ -18,11 +18,13 @@ build: clean
 .PHONY: clean
 clean:
 	rm -f *.aux
-	rm -f *.log
-	rm -f *.out
-	rm -f *.toc
 	rm -f *.bbl
 	rm -f *.blg
+	rm -f *.lof
+	rm -f *.log
+	rm -f *.lot
+	rm -f *.out
+	rm -f *.toc
 	rm -f $(MAIN).pdf
 
 gitinit:

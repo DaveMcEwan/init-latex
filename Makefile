@@ -18,7 +18,8 @@ rminit:
 	rm README.md
 
 mkmod:
-	tail -n +$(START) Makefile > Makefile
+	tail -n +$(START) Makefile > Makefile.new
+	mv Makefile.new Makefile
 
 gitinit:
 	rm -rf .git

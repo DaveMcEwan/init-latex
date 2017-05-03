@@ -163,9 +163,29 @@ bar \gls{naiive}
 REF \ref{sec:SECTION}
 CITE \cite{Shannon1948}
 
-\TODO{SOMETHING}
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=.5\linewidth]{img/placeholder.png}
+    \caption{FIGURE CAPTION.
+    \label{fig:placeholder}}
+\end{figure}
 
-%TODO: Table(+tot), Figure(+tot), Equation, math commands, SI
+\begin{table}[!ht]
+    \centering
+    \begin{tabular}{| l | r |} \hline
+Shape                           & square                    \\ \hline
+Center frequency                & \SI{2.44}{\giga\hertz}    \\ \hline
+Gain                            & \SI{0.625}{\dBi}          \\ \hline
+    \end{tabular}
+    \caption{TABLE CAPTION.
+    \label{tab:placeholder}}
+\end{table}
+
+\begin{equation} \label{eq:localmarkov}
+X_t \indep X_{\V\backslash (t \cup \textbf{ne}(t))} \mid X_{\textbf{ne}(t)}
+\end{equation}
+
+\TODO{SOMETHING}
 
 % }}} sec:SECTION
 
@@ -189,6 +209,12 @@ CITE \cite{Shannon1948}
 
     \subsection{APPENDSUBSEC}\label{appendix:APPENDSUBSEC}
     \lstinputlisting[language=make]{Makefile}
+
+    \section{Lists}
+
+    \listoffigures
+
+    \listoftables
 
 \end{appendices} \fi % }}}
 

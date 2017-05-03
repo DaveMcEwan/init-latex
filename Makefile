@@ -23,7 +23,7 @@ mkmod:
 gitinit:
 	rm -rf .git
 	git init
-	git add * .*
+	git add * .hooks .gitignore
 	git commit -m "Initial commit by init-latex"
 	@echo "REMINDER: git remote add origin <url>"
 

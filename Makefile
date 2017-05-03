@@ -38,13 +38,13 @@ gitinit:
 MAIN := main
 
 rebuild:
-	pdflatex -quiet $(MAIN)
+	pdflatex -interaction=batchmode $(MAIN)
 
 build: clean
-	pdflatex -quiet $(MAIN)
-	bibtex          $(MAIN)
-	pdflatex -quiet $(MAIN)
-	pdflatex -quiet $(MAIN)
+	pdflatex -interaction=batchmode $(MAIN)
+	bibtex -terse $(MAIN)
+	pdflatex -interaction=batchmode $(MAIN)
+	pdflatex -interaction=batchmode $(MAIN)
 
 .PHONY: clean
 clean:

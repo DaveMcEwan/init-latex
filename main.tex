@@ -117,7 +117,8 @@
 \newcommand{\TODO}[1]{[\textbf{TODO} \textsl{#1}]}
 
 \newcommand*{\ShowAbstract}{} % Comment to hide the Abstract.
-\newcommand*{\ShowAppendix}{} % Comment to hide the Appendices.
+\newcommand*{\ShowGlossary}{} % Comment to hide the Glossary.
+\newcommand*{\ShowAppendix}{} % Comment to hide the Appendix.
 
 \author{AUTHOR}
 
@@ -192,13 +193,14 @@ X_t \indep X_{\V\backslash (t \cup \textbf{ne}(t))} \mid X_{\textbf{ne}(t)}
 % {{{ epilog
 
 \clearpage
-\addcontentsline{toc}{section}{Glossary}
-\printnoidxglossary[sort=letter]
-
-\clearpage
 \addcontentsline{toc}{section}{References}
 \bibliography{main}{} % main.bib
 \bibliographystyle{plain}
+
+\ifdefined\ShowGlossary
+    \addcontentsline{toc}{section}{Glossary}
+    \printnoidxglossary[sort=letter]
+\fi
 
 \ifdefined\ShowAppendix \begin{appendices} % {{{
     \addappheadtotoc

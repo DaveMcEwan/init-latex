@@ -1,9 +1,11 @@
 % !TEX TS-program = pdflatex
 % !TEX encoding = UTF-8 Unicode
-% <ORIGIN>
+% ORIGIN URL
 % {{{ setup
 
 \documentclass[11pt,twoside]{article}
+
+\usepackage[utf8]{inputenc}
 
 \usepackage[pdftex,
             pdfauthor={AUTHOR},
@@ -14,9 +16,15 @@
             pdfcreator={pdflatex},
             breaklinks]{hyperref}
 
+\usepackage{sectsty}
+\allsectionsfont{\sffamily\mdseries\upshape}
+
 \usepackage[a4paper,margin=2.5cm,headheight=13.6pt]{geometry}
 \usepackage{fancyhdr}
 \pagestyle{fancy} % options: empty, plain, fancy
+\renewcommand{\headrulewidth}{0pt}
+\lhead{}\chead{}\rhead{}
+\lfoot{}\cfoot{\thepage}\rfoot{}
 
 \usepackage{url}
 \usepackage{breakurl}
@@ -28,7 +36,6 @@
 \usepackage{multirow}
 \usepackage{appendix}
 
-\usepackage{listings}
 \usepackage{color}
 \definecolor{dkgreen}{rgb}{0,0.6,0}
 \definecolor{gray}{rgb}{0.5,0.5,0.5}
@@ -41,14 +48,56 @@
     urlcolor=black
 }
 
+\usepackage{listings}
+\lstset{identifierstyle=\color{dkgreen}}
+\lstdefinelanguage{none}{
+  identifierstyle=
+}
+\newcommand{\lstNone}{
+    \lstset{language=none,
+            numbers=left,
+            showstringspaces=false,
+            numberstyle=\tiny\color{gray},
+            numbersep=5pt,
+            breaklines=false,
+            basicstyle=\scriptsize\ttfamily}
+}
+
+\newcommand{\lstC}{
+    \lstset{language=C,
+            numbers=left,
+            showstringspaces=false,
+            numberstyle=\tiny\color{gray},
+            keywordstyle=\color{blue},
+            commentstyle=\color{dkgreen},
+            stringstyle=\color{mauve},
+            numbersep=5pt,
+            breaklines=false,
+            basicstyle=\small\ttfamily}
+}
+
 \usepackage{graphicx}
 \usepackage{tikz}
 \usetikzlibrary{shapes, shapes.arrows}
 
 \usepackage{amsmath}
 \usepackage{amssymb}
-\lhead{}\chead{}\rhead{}
-\lfoot{}\cfoot{\thepage}\rfoot{}
+\newcommand{\indep}{\perp\!\!\!\perp} % Define the independent symbol
+\newcommand{\nindep}{\centernot{\indep}} % Define the not-independent symbol
+\newcommand{\nimplies}{\centernot{\implies}} % Define the not-implies symbol
+\newcommand{\niff}{\centernot{\iff}} % Define the not-iff symbol
+\newcommand{\G}{\mathcal{G}}
+\newcommand{\E}{\mathcal{E}}
+\newcommand{\V}{\mathcal{V}}
+
+\usepackage{siunitx}
+\let\DeclareUSUnit\DeclareSIUnit
+\let\US\SI
+\DeclareUSUnit\ounce{oz}
+\DeclareUSUnit\foot{ft}
+\DeclareUSUnit\inch{in}
+\DeclareUSUnit\mil{mil}
+\DeclareSIUnit\dBi{dBi}
 
 \usepackage{glossaries} % {{{
 \makenoidxglossaries
@@ -74,9 +123,12 @@
 
 \title{TITLE}
 
+\date{}
+
 % }}} setup
 
 \begin{document}
+\sffamily % Comment this and \allsectionsfont (in setup) to get default font.
 
 % {{{ prolog
 

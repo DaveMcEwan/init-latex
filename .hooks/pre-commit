@@ -45,6 +45,15 @@ EOF
     exit 1
 fi
 
+# Check for lines longer than 80 characters.
+if
+    git diff --cached --name-only | grep -P '\.(tex|bib)$' | \
+    xargs git diff --cached | grep '.\{82,\}'
+then
+    echo "ABORT: Long lines found in commit to .tex or .bib files."
+    exit 1
+fi
+
 # Check for tabs.
 if
     git diff --cached --name-only | grep -P '\.(tex|bib)$' | \

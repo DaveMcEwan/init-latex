@@ -23,7 +23,8 @@ For more info on git hooks and how they work please see <http://githooks.com>
 
     make
 
-Now several things should have happened
+Now several things should have happened:
+
     1. The `LICENSE` and `README.md` files are gone.
     2. The `Makefile` has self-modified to only contain generic rules for a PDF
        LaTeX project, not anything specific to init-latex.

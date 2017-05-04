@@ -49,7 +49,6 @@
 }
 
 \usepackage{listings}
-\lstset{identifierstyle=\color{dkgreen}}
 \lstdefinelanguage{none}{
   identifierstyle=
 }
@@ -210,7 +209,15 @@ X_t \indep X_{\V\backslash (t \cup \textbf{ne}(t))} \mid X_{\textbf{ne}(t)}
     \label{appendix:APPENDSEC}
 
     \subsection{APPENDSUBSEC}\label{appendix:APPENDSUBSEC}
-    \lstinputlisting[language=make]{Makefile}
+    \lstC
+    \begin{lstlisting}
+    // Example
+    #include<stdio.h>
+    main()
+    {
+        printf("Hello World");
+    }
+    \end{lstlisting}
 
     \section{Lists}
 

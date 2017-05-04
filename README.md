@@ -25,12 +25,12 @@ For more info on git hooks and how they work please see <http://githooks.com>
 
 Now several things should have happened:
 
-    1. The `LICENSE` and `README.md` files are gone.
-    2. The `Makefile` has self-modified to only contain generic rules for a PDF
-       LaTeX project, not anything specific to init-latex.
-    3. The git repository now contains a single commit with the message
-       `Initial commit by init-latex`.
-    4. Git hooks are in place to prevent common mistakes and conflicts.
+  1. The `LICENSE` and `README.md` files are gone.
+  2. The `Makefile` has self-modified to only contain generic rules for a PDF
+     LaTeX project, not anything specific to init-latex.
+  3. The git repository now contains a single commit with the message
+     `Initial commit by init-latex`.
+  4. Git hooks are in place to prevent common mistakes and conflicts.
 
 **Third**, check that the PDF toolchain works. (pdflatex, bibtex, etc...)
 This should run without error and produce `main.pdf`.

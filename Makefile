@@ -61,5 +61,5 @@ clean:
 .PHONY: hooks
 hooks:
 	rm -rf .git/hooks
-	ln -s ../.hooks .git/hooks
+	cd .git; ln -s ../.hooks hooks
 

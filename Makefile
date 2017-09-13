@@ -37,6 +37,8 @@ gitinit:
 
 MAIN := main
 
+default: build
+
 rebuild:
 	pdflatex -interaction=batchmode $(MAIN)
 

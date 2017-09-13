@@ -41,7 +41,7 @@ rebuild:
 	pdflatex -interaction=batchmode $(MAIN)
 
 build: clean
-	pdflatex -interaction=batchmode $(MAIN)
+	pdflatex $(MAIN)
 	bibtex -terse $(MAIN)
 	pdflatex -interaction=batchmode $(MAIN)
 	pdflatex -interaction=batchmode $(MAIN)
